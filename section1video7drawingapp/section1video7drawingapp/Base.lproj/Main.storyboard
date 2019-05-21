@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="vol2section1video7drawingapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FYH-Jp-GCL">
+                                <rect key="frame" x="20" y="700" width="148" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="Eg8-Tm-90i"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Pen"/>
+                                    <segment title="Rectangle"/>
+                                </segments>
+                                <connections>
+                                    <action selector="canvasToolDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lIv-Q2-TrU"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8j-Pl-Mez" customClass="CanvasView" customModule="vol2section1video7drawingapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAs-qb-psM">
+                                <rect key="frame" x="302" y="699" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="hQY-6s-Km4"/>
+                                </constraints>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WKa-vh-7OC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-29-4YN">
+                                <rect key="frame" x="358" y="699" width="36" height="30"/>
+                                <state key="normal" title="Redo"/>
+                                <connections>
+                                    <action selector="redoButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vOc-aZ-b7u"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oo8-Gv-AJE">
+                                <rect key="frame" x="20" y="659" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Green"/>
+                                    <segment title="Purple"/>
+                                    <segment title="Cyan"/>
+                                    <segment title="Black"/>
+                                </segments>
+                                <connections>
+                                    <action selector="canvasToolDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="hcn-kH-MRv"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96980406746031744" green="0.96980406746031744" blue="0.96980406746031744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FYH-Jp-GCL" firstAttribute="top" secondItem="z8j-Pl-Mez" secondAttribute="bottom" constant="53" id="0w2-Nj-wSk"/>
+                            <constraint firstItem="z8j-Pl-Mez" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="1Mb-s1-Hxl"/>
+                            <constraint firstItem="oo8-Gv-AJE" firstAttribute="leading" secondItem="FYH-Jp-GCL" secondAttribute="leading" id="1cr-PC-1Ev"/>
+                            <constraint firstItem="TAs-qb-psM" firstAttribute="centerY" secondItem="FYH-Jp-GCL" secondAttribute="centerY" id="CMS-hG-Qlb"/>
+                            <constraint firstItem="AOa-29-4YN" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="E6i-TD-DOv"/>
+                            <constraint firstItem="z8j-Pl-Mez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MVy-jk-a1x"/>
+                            <constraint firstItem="oo8-Gv-AJE" firstAttribute="trailing" secondItem="AOa-29-4YN" secondAttribute="trailing" id="Ozv-Z0-PhZ"/>
+                            <constraint firstItem="oo8-Gv-AJE" firstAttribute="top" secondItem="z8j-Pl-Mez" secondAttribute="bottom" constant="12" id="PAA-VS-P90"/>
+                            <constraint firstItem="TAs-qb-psM" firstAttribute="baseline" secondItem="AOa-29-4YN" secondAttribute="baseline" id="iAA-gJ-V7i"/>
+                            <constraint firstItem="AOa-29-4YN" firstAttribute="leading" secondItem="TAs-qb-psM" secondAttribute="trailing" constant="10" id="iQr-Ig-pIS"/>
+                            <constraint firstItem="FYH-Jp-GCL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="iwm-wk-jhv"/>
+                            <constraint firstAttribute="trailing" secondItem="z8j-Pl-Mez" secondAttribute="trailing" id="j2A-Wg-lEu"/>
+                            <constraint firstItem="TAs-qb-psM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FYH-Jp-GCL" secondAttribute="trailing" constant="10" id="oGB-de-abr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FYH-Jp-GCL" secondAttribute="bottom" constant="8" symbolic="YES" id="qM7-KQ-N0H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="z8j-Pl-Mez" id="R6V-bx-i0H"/>
+                        <outlet property="colorSelector" destination="oo8-Gv-AJE" id="B7M-eu-FgX"/>
+                        <outlet property="toolSelector" destination="FYH-Jp-GCL" id="DXZ-z9-I1l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.199999999999999" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
